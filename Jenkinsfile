@@ -3,7 +3,10 @@ pipeline{
         label 'python3.10'
     }
     parameters{
-        choice(name: 'Branch_to_Build', choices: ['master'], description: 'Selecting branch of choice')
+        choice(name: 'Branch_to_Build', choices: ['master','python3.10'], description: 'Selecting branch of choice')
+    }
+    triggers{
+        pollSCM('* * * * *')
     }
     post{
         always{
