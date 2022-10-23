@@ -1,4 +1,4 @@
-def call (){
+def python (){
     pipeline{
     agent {
         label 'python3.10'
