@@ -1,4 +1,4 @@
-def call(url) {
+def call() {
     pipeline {
         agent {
             label 'python3.10'
@@ -32,7 +32,7 @@ def call(url) {
         stages {
             stage('clone') {
                 steps {
-                    git url: "${url}",
+                    git url: "https://github.com/tarunkumarpendem/python-webcount.git",
                     branch: "${params.Branch_to_Build}"
                 }
             }
